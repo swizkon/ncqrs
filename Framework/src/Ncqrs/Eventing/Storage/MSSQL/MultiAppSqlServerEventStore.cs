@@ -95,7 +95,7 @@ namespace Ncqrs.Eventing.Storage.MSSQL
         /// <returns>Queries that contain the <i>create table</i> and <i>create index</i> statements.</returns>
         public static IEnumerable<String> GetTableCreationQueries()
         {
-            const string resourcename = "Ncqrs.Eventing.Storage.MSSQL.TableCreationScript.sql";
+            const string resourcename = "Ncqrs.Eventing.Storage.MSSQL.MultiAppTableCreationScript.sql";
 
             var currentAsm = Assembly.GetExecutingAssembly();
             var resource = currentAsm.GetManifestResourceStream(resourcename);
@@ -118,7 +118,7 @@ namespace Ncqrs.Eventing.Storage.MSSQL
 
         private static string GetEventStoreTableCreationScript()
         {
-            const string resourcename = "Ncqrs.Eventing.Storage.MSSQL.TableCreationScript.sql";
+            const string resourcename = "Ncqrs.Eventing.Storage.MSSQL.MultiAppTableCreationScript.sql";
 
             var currentAsm = Assembly.GetExecutingAssembly();
             var resource = currentAsm.GetManifestResourceStream(resourcename);
@@ -134,7 +134,7 @@ namespace Ncqrs.Eventing.Storage.MSSQL
 
         private static string GetEventStoreConstraintCreationScript()
         {
-            const string resourcename = "Ncqrs.Eventing.Storage.MSSQL.ConstraintCreationScript.sql";
+            const string resourcename = "Ncqrs.Eventing.Storage.MSSQL.MultiAppConstraintCreationScript.sql";
 
             var currentAsm = Assembly.GetExecutingAssembly();
             var resource = currentAsm.GetManifestResourceStream(resourcename);

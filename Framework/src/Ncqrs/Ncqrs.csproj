@@ -267,10 +267,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Eventing\Storage\MSSQL\ConstraintCreationScript.sql">
+    <EmbeddedResource Include="Eventing\Storage\MSSQL\MultiAppConstraintCreationScript.sql">
       <CustomToolNamespace>Ncqrs.Eventing.Storage.MSSQL.SimpleMicrosoftSqlServerEventStore</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="Eventing\Storage\MSSQL\TableCreationScript.sql">
+    <EmbeddedResource Include="Eventing\Storage\MSSQL\MultiAppTableCreationScript.sql">
       <CustomToolNamespace>Ncqrs.Eventing.Storage.MSSQL.SimpleMicrosoftSqlServerEventStore</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
