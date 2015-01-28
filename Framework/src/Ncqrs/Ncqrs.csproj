@@ -140,11 +140,13 @@
     <Compile Include="Eventing\Sourcing\Snapshotting\NoSnapshottingPolicy.cs" />
     <Compile Include="Eventing\Sourcing\Snapshotting\SimpleSnapshottingPolicy.cs" />
     <Compile Include="Eventing\Storage\DuplicateCommitException.cs" />
+    <Compile Include="Eventing\Storage\MSSQL\MultiAppQueries.cs" />
     <Compile Include="Eventing\Storage\NoDB\NoDBEventStore.cs" />
     <Compile Include="Eventing\Storage\NoDB\NoDBSnapshotStore.cs" />
     <Compile Include="Eventing\Storage\NoDB\StoredEventExtensions.cs" />
     <Compile Include="Eventing\Sourcing\UndefinedValues.cs" />
     <Compile Include="Eventing\Storage\NullSnapshotStore.cs" />
+    <Compile Include="Eventing\Storage\MSSQL\MultiAppSqlServerEventStore.cs" />
     <Compile Include="Eventing\UncommittedEvent.cs" />
     <Compile Include="Eventing\UncommittedEventStream.cs" />
     <Compile Include="GuidCombGenerator.cs" />
@@ -262,6 +264,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Eventing\Storage\SQL\ConstraintCreationScript.sql">
       <CustomToolNamespace>Ncqrs.Eventing.Storage.SQL.SimpleMicrosoftSqlServerEventStore</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Eventing\Storage\MSSQL\ConstraintCreationScript.sql">
+      <CustomToolNamespace>Ncqrs.Eventing.Storage.MSSQL.SimpleMicrosoftSqlServerEventStore</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventing\Storage\MSSQL\TableCreationScript.sql">
+      <CustomToolNamespace>Ncqrs.Eventing.Storage.MSSQL.SimpleMicrosoftSqlServerEventStore</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
