@@ -48,7 +48,7 @@ ELSE
 			[EventSourceId]			[uniqueidentifier]		NOT NULL,
 			[Sequence]				[bigint]				NULL,
 			[Data]					[nvarchar](max)			NOT NULL,
-			CONSTRAINT [PK_Events] PRIMARY KEY CLUSTERED
+			CONSTRAINT [PK_MultiAppEvents] PRIMARY KEY CLUSTERED
 			(
 				[SequentialId] ASC
 			)
@@ -98,7 +98,7 @@ ELSE
 			[BatchId]				[int] IDENTITY(1,1)		NOT NULL,
 			[PipelineName]			[varchar](255)			NOT NULL,
 			[LastProcessedEventId]	[uniqueidentifier]		NOT NULL,
-			CONSTRAINT [PK_MainPipelineState] PRIMARY KEY CLUSTERED 
+			CONSTRAINT [PK_MultiAppPipelineState] PRIMARY KEY CLUSTERED 
 			(
 				[BatchId] ASC
 			)

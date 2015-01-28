@@ -39,22 +39,26 @@ namespace Ncqrs.Eventing.Storage.MSSQL
             AND [SequentialId] > (SELECT [SequentialId] FROM [MultiAppEvents] WHERE [Id] = @EventId AND [ApplicationName] = @ApplicationName) ORDER BY [SequentialId]";
 
         public const String SelectEventsFromBeginningOfTime =
-        @"SELECT TOP {0} [Id], [EventSourceId], [Name], [Version], [TimeStamp], [Data], [Sequence] FROM [MultiAppEvents]
+        @"SELECT TOP {0} [Id], [EventSourceId], [Name], [Version], [TimeStamp], [Data], [Sequence]
+        FROM [MultiAppEvents]
         WHERE [ApplicationName] = @ApplicationName
         ORDER BY [SequentialId]";
 
         public const String SelectAllIdsForTypeQuery =
-        @"SELECT [Id] FROM [EventSources]
+        @"SELECT [Id]
+        FROM [MultiAppEventSources]
         WHERE [ApplicationName] = @ApplicationName
             AND [Type] = @Type";
 
         public const String SelectVersionQuery =
-        @"SELECT [Version] FROM [EventSources]
+        @"SELECT [Version]
+        FROM [MultiAppEventSources]
         WHERE [Id] = @id 
             AND [ApplicationName] = @ApplicationName";
 
         public const String SelectLatestSnapshot =
-        @"SELECT TOP 1 * FROM [MultiAppSnapshots]
+        @"SELECT TOP 1 *
+        FROM [MultiAppSnapshots]
         WHERE [EventSourceId] = @EventSourceId
             AND [ApplicationName] = @ApplicationName 
         ORDER BY Version DESC";

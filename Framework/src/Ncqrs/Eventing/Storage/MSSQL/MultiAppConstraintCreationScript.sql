@@ -34,7 +34,7 @@ ELSE
 
 		ALTER TABLE [MultiAppSnapshots] CHECK CONSTRAINT [FK_MultiAppSnapshots_MultiAppEventSources]
 
-		PRINT 'The FK_Snapshots_EventSources foreign-key constraint was created.'
+		PRINT 'The FK_MultiAppSnapshots_MultiAppEventSources foreign-key constraint was created.'
 	END
 
 IF EXISTS(SELECT * FROM sysobjects WHERE xtype = 'F' AND name = 'FK_MultiAppPipelineState_MultiAppEvents' AND uid = SCHEMA_ID(SCHEMA_NAME()))
